@@ -1,10 +1,17 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import CreateRoomPage from './pages/CreateRoomPage';
+
 function App() {
-    return (
-      <div className="flex items-center justify-center h-screen text-2xl font-bold">
-        Bill Split App Coming Soon 🚀
-      </div>
-    )
-  }
-  
-  export default App
-  
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/create-room/:roomId" element={<CreateRoomPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
